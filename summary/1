@@ -1,0 +1,21 @@
+CHAPTER 3 Remote Repository : SUMMARY
+
+There is two type of repositories
+
+-Local : reside on the computers of team members
+
+-Remote: reside on a server accessible to everyone in the team, it's mainly used  to share data
+
+Most version control work happens in the local repository
+
+Features :
+
+They both have branches, commits and tags but the local repository includes a working copy associated with it and the remote repository only consists of the bare ".git" repository folder
+
+Usage 
+
+The actual work on the project happens in the local repository, modifications are made and committed over there
+
+The remote repository is only thought as a means for sharing and exchanging code between developers(not for actually working)
+
+We can create a remote repository by cloning a local one using the --bare option or by using git init --bare on the command line
