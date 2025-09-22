@@ -1,0 +1,46 @@
+Title: Flashcard Vocabulary Trainer
+
+Problem Statement:
+As a non-native English speaker studying in the U.S., I often struggle to memorize new vocabulary. I sometimes forget words, and I need a simple way to practice them regularly.
+
+Proposed Solution:
+I will build a flashcard application in Java that helps me study English vocabulary. The program will use arrays to store words and images, and it will allow me to test myself through randomized flashcards.
+
+Features:
+
+Store vocabulary words in an array.
+
+Store corresponding image file names/paths in a second array.
+
+Display a random “card” (word + image reference).
+
+Allow the user to guess the word and check if correct.
+
+Keep score of correct answers.
+
+(Optional) Allow adding new cards during runtime.
+
+(Optional) Save progress in a text file.
+
+Why this project is personal/unique:
+This project connects directly to my personal journey as an English learner. It is both a programming exercise and a tool I can continue to use after class to improve my language skills.
+
+Technical Competencies Demonstrated:
+
+Java arrays (two arrays: words + images).
+
+Loops, conditions, functions.
+
+Randomization.
+
+User interaction via console input.
+
+(Optional) File I/O for persistence.
+
+Timeline:
+
+Day 1: Build basic array structure and test random selection.
+
+Day 2: Implement quiz logic and scoring system.
+
+Day 3: Add optional features and refine code.
