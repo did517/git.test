@@ -1,0 +1,53 @@
+Flashcard Language Trainer – Basic Version
+
+1. Display menu:
+    - Choose your native language: English or French
+    - Choose the language you want to learn: English or French
+
+2. Select arrays based on user choice:
+    - English array: ["dog", "cat", "house", ...]
+    - French array: ["chien", "chat", "maison", ...]
+
+3. For each word in the selected arrays:
+    a. Display the word in native language
+    b. Ask user for the translation
+    c. Check if the answer is correct
+    d. Display Correct / Wrong feedback
+
+4. Display final score:
+    - Number of correct answers out of total
+
+
+
+
+
+
+
+
+Flashcard Language Trainer – Extended Version
+
+1. Display menu:
+    - Choose your native language: English, French, Spanish
+    - Choose the language you want to learn: English, French, Spanish
+
+2. Select arrays based on user choice:
+    - English array: ["dog", "cat", "house", ...]
+    - French array: ["chien", "chat", "maison", ...]
+    - Spanish array: ["perro", "gato", "casa", ...]
+
+3. For each word in the selected arrays:
+    a. Display the word in native language
+    b. Ask user for the translation
+    c. Check if the answer is correct
+    d. Display Correct / Wrong feedback
+
+4. Keep track of score:
+    - Increment score if correct
+
+5. Display final score:
+    - Number of correct answers / total words
+
+6. Optional features for future:
+    - Randomize order of words
+    - Allow user to add new words to the arrays
+
