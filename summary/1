@@ -1,36 +1,8 @@
-(Summary)
+Mon projet est une flashcard language practice, ce projet est une application console interactive permettant d’apprendre du vocabulaire entre deux langues. L’utilisateur commence par sélectionner sa langue natale et la langue qu’il souhaite apprendre. Ensuite, un quiz s’enclenche : pour chaque mot, le programme affiche un mot dans la langue natale et demande sa traduction dans la langue cible. Les réponses sont vérifiées sans tenir compte des majuscules/minuscules, et un score final est affiché à la fin. En bonus, j’ai ajouté une fonctionnalité qui enregistre les erreurs de l’utilisateur, puis affiche les bonnes réponses aux questions mal répondues.
 
-INTRODUCTION
+La population visée pour ce programme est les nouveaux apprenants d’une langues, ceux qui voudrait tester leur niveau ou juste pratiquer
 
-*Work is mostly local
-Most version control work happen in the local repository
+ce projet est unique prcq en tant qu’apprenante moi meme, je ressens toujours le besoin de connaîtras mon niveau d’anglaise voir si je peux m’exprimer clairement et correctement en presence des natives, ceci dit, j’ai encore du mal. je le fais aussi pour mes frères et soeurs , j’ai étais inspirée par eux alors que mes petites soeurs et mon frère pratiquaient leur anglais et ma grande soeur son espagnole, j’ai voulu créer quelque chose que boots my family and i can use et donc j’aimerai les dédier ce projet .
 
-*There is two type of repositories
--Local: Hosted pn a team member’s computer
--Remote: Hosted on a sever accessible to everyone in the team.
-Mainly used to share data with others
-
-*Features
-They both have branches, commits, tags,…
-The local repository includes a working copy
-The remote repository contains only the git folder
-
-*How to create  a  remote repository
-by cloning a local repository using the —bare option
-Or by using git int —bare command
-
- CONNECTING A REMOTE REPOSITORY
- A repository  cloned from a server is automatically saved by git and called “origin” but if it started with a fresh local repository , no remote connections are saved . Many remote can be connected with a local repository .
-
-INSPECTING REMOTE DATA 
-
-INTEGRATION REMOTES CHANGES
-
-To integrate changes into a working copy the pull command is what needed , this command download new commits from the remote directly integrates them into the working copy.
-But before integrating the changes into local working copy, we have to inspect them
-
-EDIT REMOTES 
-
-DELETE BRANCHES
-
+ce projet m’est cher parce qu’il me reflette, il dit qui je suis, il ne sera pas parfait mais il pourra encore s’ameliorer au fur et a mesure que Je m’ameliorerai, il retrace mon parcours d’apprentissage et je suis sur que ca sera fun de le construir
 
