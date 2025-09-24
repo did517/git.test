@@ -25,3 +25,22 @@ Interface utilisateur :
 Tu penses faire ça uniquement en console ou envisages-tu une interface graphique ?
 
 Si en console, comment vas-tu gérer la saisie utilisateur pour que ce soit fluide et clair ?
+
+             Reponces
+
+
+-Je vais premièrement afficher les langues dans le prompte afin de permettre a l’utilisateur de choisir, par après je vais créer des arrays pour chacune des langues et y mettre les mots même mots dans leurs langues des array respectives
+
+ -je prévois d’utiliser des tableaux
+ 
+- je vais ignorer la case
+
+-si equals.ignoreCase display correct else display the correct answer is +”correct”
+
+-j’utiliserai loop pour les  memorizer  
+
+-j’utiliserai List<String> wrongAnswer = new array();
+
+-juste en console
+
+-j’utiliserai le scanner pour l’interaction 
