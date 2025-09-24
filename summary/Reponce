@@ -1,0 +1,27 @@
+Gestion de langues:
+
+-Comment comptes-tu représenter les différentes langues et leurs listes de mots dans ton programme ?
+
+-Par exemple, tu prévois d’utiliser des tableaux, des listes, ou une structure plus complexe comme une Map ?
+
+Validation des réponses:
+
+-Comment vas-tu gérer les réponses correctes qui peuvent avoir plusieurs formes (exemple : pluriel, synonymes, accents) ?
+
+-comptes-tu faire une comparaison stricte ou une comparaison plus souple (ignorer la casse, les accents) ?
+
+Stockage des erreurs:
+
+-Quelle structure de données utiliseras-tu pour mémoriser les questions ratées et leurs bonnes réponses ?
+
+-Et comment afficheras-tu ces erreurs à la fin de façon claire pour l’utilisateur ?
+
+Scalabilité
+
+-Si tu voulais ajouter d’autres fonctionnalités (par exemple, un mode “révision” ou “chrono”), comment organiserais-tu ton code pour que ce soit facile à maintenir et à étendre ?
+
+Interface utilisateur:
+
+-Tu penses faire ça uniquement en console ou envisages-tu une interface graphique ?
+
+-Si en console, comment vas-tu gérer la saisie utilisateur pour que ce soit fluide et clair ?
