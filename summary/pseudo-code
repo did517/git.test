@@ -1,53 +1,34 @@
 Flashcard Language Trainer – Basic Version
 
-1. Display menu:
-    - Choose your native language: English or French
-    - Choose the language you want to learn: English or French
 
-2. Select arrays based on user choice:
-    - English array: ["dog", "cat", "house", ...]
-    - French array: ["chien", "chat", "maison", ...]
+Prompt “Language trainer”
 
-3. For each word in the selected arrays:
-    a. Display the word in native language
-    b. Ask user for the translation
-    c. Check if the answer is correct
-    d. Display Correct / Wrong feedback
+Display : Select your native language
 
-4. Display final score:
-    - Number of correct answers out of total
+Display : Select the language you are learning
 
+Select the array based on user choice
 
+Display words on the array based on user choice 
 
+For each words in the selected arrays:
 
+Display the word in user’s native language
 
+Ask user for the translation in the learning language
 
+Add randomization to randomize translation 
 
+Check  the answer 
 
-Flashcard Language Trainer – Extended Version
+Display correct if user’s answer “correct”
 
-1. Display menu:
-    - Choose your native language: English, French, Spanish
-    - Choose the language you want to learn: English, French, Spanish
+else 
 
-2. Select arrays based on user choice:
-    - English array: ["dog", "cat", "house", ...]
-    - French array: ["chien", "chat", "maison", ...]
-    - Spanish array: ["perro", "gato", "casa", ...]
+Display 
 
-3. For each word in the selected arrays:
-    a. Display the word in native language
-    b. Ask user for the translation
-    c. Check if the answer is correct
-    d. Display Correct / Wrong feedback
+Wrong, correct answer is + “correct answer”
 
-4. Keep track of score:
-    - Increment score if correct
+ Display final score “Number of correct answers “
 
-5. Display final score:
-    - Number of correct answers / total words
-
-6. Optional features for future:
-    - Randomize order of words
-    - Allow user to add new words to the arrays
-
+Display correct answers for failed questions
