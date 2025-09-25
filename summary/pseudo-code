@@ -1,4 +1,4 @@
-Flashcard Language Trainer – Basic Version
+Flashcard Language Practice : PSEUDO-CODE
 
 
 Prompt “Language trainer”
@@ -25,10 +25,8 @@ Display correct if user’s answer “correct”
 
 else 
 
-Display 
+Display wrong! Correct answer is + " correct answer"
 
-Wrong, correct answer is + “correct answer”
+Display final score 
 
- Display final score “Number of correct answers “
-
-Display correct answers for failed questions
+Display Correct answers for failled question
