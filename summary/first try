@@ -1,0 +1,77 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class Langue {
+    public static void main (String [] args ){
+        Scanner scanner = new Scanner(System.in);
+        //on demande a l'utilisateur de choisir sa langue maternelle
+        System.out.print("Select your native language :");
+        System.out.print(" English");
+        System.out.print(" French");
+        System.out.print(" Spanish");
+        int nativeLanguage= scanner.nextInt();
+        //on demande a l'utilisateur de selctioner la langue qu'il apprend
+        System.out.print("Select the language you are learning");
+        System.out.print(" English");
+        System.out.print(" French");
+        System.out.print(" Spanish");
+        int LearningLanguage= scanner.nextInt();
+        // les mots a traduir dans les diefferentes langues  
+        String [] English ={"House"}; 
+        String [] French = {"Maison"}; 
+        String []Spanish = {"Casa"}; 
+        String [] fromlang = {"English","French","Spanish"};
+        String [] tolang = {"English","French","spanish"};  
+        if(nativeLanguage == 0 && LearningLanguage == 1){
+            fromlang = English;
+            tolang = French;
+        }
+         else if(nativeLanguage == 0 && LearningLanguage ==2){
+            fromlang = English;
+            tolang = Spanish;
+        }
+        else if(nativeLanguage == 1 && LearningLanguage == 0){
+            fromlang = French;
+            tolang = English;
+        }
+        else if(nativeLanguage ==1 && LearningLanguage == 2){
+            fromlang = French;
+            tolang = Spanish;
+        }
+        else if(nativeLanguage == 2 && LearningLanguage == 0){
+            fromlang = Spanish;
+            tolang = English;
+        }
+        else if (nativeLanguage == 2 && LearningLanguage == 1){
+            fromlang = Spanish;
+            tolang = French;
+        }
+        else {
+            System.out.println("Invalid choice or same language selected");
+        }
+        int reponse =0;
+        int incorrect =0;
+        List<String>wrongAnswers=new ArrayList<>();
+        for(int i =0;i<fromlang.length;i++){
+            System.out.println("Translet thsi word :"+fromlang[i]);
+            String answer = scanner.next();
+            if(answer.equalsIgnoreCase(tolang[i])){
+                System.out.println("Correct!");
+                reponse++;
+            }
+            else {
+                System.out.println("Wrong! the correct answer is "+ tolang);
+                wrongAnswers.add(fromlang[i] +"->"+tolang);
+                incorrect++;
+            }
+        }
+         System.out.println("\nYour score:" + reponse + fromlang.length);
+         System.out.print("\nIncorrect anwers:" + fromlang.length);
+        
+
+    
+    
+
+    }
+    
+}
