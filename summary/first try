@@ -270,3 +270,107 @@ public class LanguagePractice {
     }
     
 }
+
+import java.util.Scanner;
+
+public class LanguagePractice {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        String[] English = {"Hello", "Thank you", "Water", "Sun", "House", "Bread", "Cloud", "Book", "Sea", "School"};
+        String[] French  = {"Bonjour", "Merci", "Eau", "Soleil", "Maison", "Pain", "Nuage", "Livre", "Mer", "École"};
+        String[] Spanish = {"Hola", "Gracias", "Agua", "Sol", "Casa", "Pan", "Nube", "Libro", "Mar", "Escuela"};
+
+        String[] nativeLang = null;
+        String[] learningLang = null;
+        String nativeLangName = "";
+        String learningLangName = "";
+
+        System.out.println("Select your native language:");
+        System.out.println("[1] English");
+        System.out.println("[2] French");
+        System.out.println("[3] Spanish");
+        int nativeLanguage = input.nextInt();
+
+        System.out.println("Select the language you are learning:");
+        System.out.println("[1] English");
+        System.out.println("[2] French");
+        System.out.println("[3] Spanish");
+        int learningLanguage = input.nextInt();
+
+        // Empêcher l'utilisateur de choisir deux fois la même langue
+        if (nativeLanguage == learningLanguage) {
+            System.out.println("You selected the same language twice. Please choose two different languages.");
+            return;
+        }
+
+        // Associer les bons tableaux selon le choix de l'utilisateur
+        switch (nativeLanguage) {
+            case 1 -> {
+                nativeLang = English;
+                nativeLangName = "English";
+            }
+            case 2 -> {
+                nativeLang = French;
+                nativeLangName = "French";
+            }
+            case 3 -> {
+                nativeLang = Spanish;
+                nativeLangName = "Spanish";
+            }
+            default -> {
+                System.out.println("Invalid native language selection.");
+                return;
+            }
+        }
+
+        switch (learningLanguage) {
+            case 1 -> {
+                learningLang = English;
+                learningLangName = "English";
+            }
+            case 2 -> {
+                learningLang = French;
+                learningLangName = "French";
+            }
+            case 3 -> {
+                learningLang = Spanish;
+                learningLangName = "Spanish";
+            }
+            default -> {
+                System.out.println("Invalid learning language selection.");
+                return;
+            }
+        }
+
+        // Affichage propre des traductions
+        System.out.println("\nYou selected:");
+        System.out.println(" - Native language: " + nativeLangName);
+        System.out.println(" - Language you're learning: " + learningLangName);
+        System.out.println("\nHere are some useful words:\n");
+
+        for (int i = 0; i < nativeLang.length; i++) {
+            System.out.printf("%-15s → %s\n", nativeLang[i], learningLang[i]);
+        }
+
+        input.close();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
