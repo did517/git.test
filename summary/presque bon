@@ -1,0 +1,86 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class LanguagePractice {
+    public static void main (String [] args ){
+        Scanner scanner = new Scanner(System.in);
+        //on demande a l'utilisateur de choisir sa langue maternelle
+        System.out.println("Select your native language :");
+        System.out.println(" [ 1 ] for English");
+        System.out.println(" [ 2 ] for French");
+        System.out.println(" [ 3 ] for Spanish");
+        int nativeLanguage= scanner.nextInt();
+        //on demande a l'utilisateur de selctioner la langue qu'il apprend
+        System.out.println("Select the language you are learning");
+        System.out.println(" [ 1 ] for English");
+        System.out.println(" [ 2 ] for French");
+        System.out.println(" [ 3 ] for Spanish");
+        int learningLanguage= scanner.nextInt();   
+        // les mots a traduir dans les differentes langues  
+        String [] English ={"Hello", "Thank you", "Water", "Sun", "House", "Bread", "Cloud", "Book", "Sea", "School"}; 
+        String [] French = {"Bonjour", "Merci", "Eau", "Soleil", "Maison", "Pain", "Nuage", "Livre", "Mer", "Ecole"}; 
+        String []Spanish = {"Hola", "Gracias", "Agua", "Sol", "Casa", "Pan", "Nube", "Libro", "Mar", "Escuela"}; 
+        String [] fromlang= null;
+        String [] tolang =  null;
+        // pour nous permettre de traduir a partir des informations fournie par l'utilisateur
+        if(nativeLanguage == 1 && learningLanguage == 2){
+            fromlang = English;
+            tolang = French;
+        }
+         else if(nativeLanguage == 1 && learningLanguage ==3){
+            fromlang = English;
+            tolang = Spanish;
+        }
+        else if(nativeLanguage == 2 && learningLanguage == 1){
+            fromlang = French;
+            tolang = English;
+        }
+        else if(nativeLanguage ==2 && learningLanguage == 3){
+            fromlang = French;
+            tolang = Spanish;
+        }
+        else if(nativeLanguage == 3 && learningLanguage == 1){
+            fromlang = Spanish;
+            tolang = English;
+        }
+        else if (nativeLanguage == 3 && learningLanguage == 2){
+            fromlang = Spanish;
+            tolang = French;
+        }
+        else {
+            System.out.println("Invalid choice or same language selected");
+           
+        }
+        // la partie quiz, on va aussi comparer les reponces de l'utilisateur et les bonnes reponces
+        int reponse =0;
+        int incorrect =0;
+        List<String>wrongAnswers=new ArrayList<>();
+        for(int i =0; i<fromlang.length; i++){
+            System.out.println("Translale this word :" +fromlang[i]+ " into your learning language" );
+            String answer = scanner.next();
+            if(answer.equalsIgnoreCase(tolang[i])){
+                System.out.println("Correct!");
+                reponse++;
+            }
+            else {
+                System.out.println("Wrong! the correct answer is "+ tolang[i]);
+                wrongAnswers.add(fromlang[i] +"->"+tolang[i]);
+                incorrect++;
+            }
+        }
+        // on affiche le score total et le nombre des mauvaises reponces aisi que leur correction
+         System.out.println("\nYour score:" + reponse + " / " + fromlang.length);
+         System.out.print("\nIncorrect answers:" + incorrect + " / " + fromlang.length);
+         if(!wrongAnswers.isEmpty()){
+            System.out.println("\n Answers to the question you got wrong :");
+            for(String wrong : wrongAnswers){
+                System.out.println( wrong );
+            }
+         }
+
+         scanner.close();
+         return;
+
+    }
+    
+}
