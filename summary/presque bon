@@ -1,86 +1,109 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-public class LanguagePractice {
-    public static void main (String [] args ){
-        Scanner scanner = new Scanner(System.in);
-        //on demande a l'utilisateur de choisir sa langue maternelle
-        System.out.println("Select your native language :");
-        System.out.println(" [ 1 ] for English");
-        System.out.println(" [ 2 ] for French");
-        System.out.println(" [ 3 ] for Spanish");
-        int nativeLanguage= scanner.nextInt();
-        //on demande a l'utilisateur de selctioner la langue qu'il apprend
-        System.out.println("Select the language you are learning");
-        System.out.println(" [ 1 ] for English");
-        System.out.println(" [ 2 ] for French");
-        System.out.println(" [ 3 ] for Spanish");
-        int learningLanguage= scanner.nextInt();   
-        // les mots a traduir dans les differentes langues  
-        String [] English ={"Hello", "Thank you", "Water", "Sun", "House", "Bread", "Cloud", "Book", "Sea", "School"}; 
-        String [] French = {"Bonjour", "Merci", "Eau", "Soleil", "Maison", "Pain", "Nuage", "Livre", "Mer", "Ecole"}; 
-        String []Spanish = {"Hola", "Gracias", "Agua", "Sol", "Casa", "Pan", "Nube", "Libro", "Mar", "Escuela"}; 
-        String [] fromlang= null;
-        String [] tolang =  null;
-        // pour nous permettre de traduir a partir des informations fournie par l'utilisateur
-        if(nativeLanguage == 1 && learningLanguage == 2){
-            fromlang = English;
-            tolang = French;
-        }
-         else if(nativeLanguage == 1 && learningLanguage ==3){
-            fromlang = English;
-            tolang = Spanish;
-        }
-        else if(nativeLanguage == 2 && learningLanguage == 1){
-            fromlang = French;
-            tolang = English;
-        }
-        else if(nativeLanguage ==2 && learningLanguage == 3){
-            fromlang = French;
-            tolang = Spanish;
-        }
-        else if(nativeLanguage == 3 && learningLanguage == 1){
-            fromlang = Spanish;
-            tolang = English;
-        }
-        else if (nativeLanguage == 3 && learningLanguage == 2){
-            fromlang = Spanish;
-            tolang = French;
-        }
-        else {
-            System.out.println("Invalid choice or same language selected");
-           
-        }
-        // la partie quiz, on va aussi comparer les reponces de l'utilisateur et les bonnes reponces
-        int reponse =0;
-        int incorrect =0;
-        List<String>wrongAnswers=new ArrayList<>();
-        for(int i =0; i<fromlang.length; i++){
-            System.out.println("Translale this word :" +fromlang[i]+ " into your learning language" );
-            String answer = scanner.next();
-            if(answer.equalsIgnoreCase(tolang[i])){
-                System.out.println("Correct!");
-                reponse++;
-            }
-            else {
-                System.out.println("Wrong! the correct answer is "+ tolang[i]);
-                wrongAnswers.add(fromlang[i] +"->"+tolang[i]);
-                incorrect++;
-            }
-        }
-        // on affiche le score total et le nombre des mauvaises reponces aisi que leur correction
-         System.out.println("\nYour score:" + reponse + " / " + fromlang.length);
-         System.out.print("\nIncorrect answers:" + incorrect + " / " + fromlang.length);
-         if(!wrongAnswers.isEmpty()){
-            System.out.println("\n Answers to the question you got wrong :");
-            for(String wrong : wrongAnswers){
-                System.out.println( wrong );
-            }
-         }
-
-         scanner.close();
-         return;
-
+/** 
+ * * First project 
+ * * FlashCardApp.java 
+ * * A simple console-based flashcard application for practicing vocabulary 
+ * * between English, French, and Spanish. 
+ * * Author: Dimercia Kamwanga Numbi 
+ * * Date: October-1-2025 
+ * * Version: 1.0 */ 
+import java.util.ArrayList; 
+import java.util.List; 
+import java.util.Scanner; 
+ public class FlashCardApp { 
+  public static void main (String [] args ){ 
+    Scanner scanner = new Scanner(System.in); 
+    Welcome(); 
+    //on demande a l'utilisateur de choisir sa langue maternelle 
+    int nativeLanguage= languageChoice(scanner,"select your native language :"); 
+    //on demande a l'utilisateur de selctioner la langue qu'il apprend 
+    int learningLanguage= languageChoice(scanner, "select the language you are learning:"); scanner.nextLine(); 
+    // les mots a traduir dans les differentes langues 
+    String [] English ={"Hello", "Thank you", "Water", "Sun", "House", "Bread", "Cloud", "Book", "Sea", "School"}; 
+    String [] French = {"Bonjour", "Merci", "Eau", "Soleil", "Maison", "Pain", "Nuage", "Livre", "Mer", "Ecole"}; 
+    String []Spanish = {"Hola", "Gracias", "Agua", "Sol", "Casa", "Pan", "Nube", "Libro", "Mar", "Escuela"}; 
+    String firstLanguage=""; 
+    String learning = ""; 
+    String [] fromlang= null; 
+    String [] tolang = null; 
+    // Déterminer les langues 
+    if (nativeLanguage == 1) {
+      firstLanguage = "English"; 
+      fromlang = English; 
+    } 
+    else if (nativeLanguage == 2) { 
+      firstLanguage = "French"; 
+      fromlang = French; 
+    } 
+    else if (nativeLanguage == 3) { 
+      firstLanguage = "Spanish"; 
+      fromlang = Spanish; 
+    } 
+    if (learningLanguage == 1) { 
+        learning = "English"; 
+        tolang = English; 
+    } 
+    else if (learningLanguage == 2) { 
+        learning = "French"; 
+        tolang = French; 
+    } 
+    else if (learningLanguage == 3) { 
+        learning = "Spanish"; 
+        tolang = Spanish; 
     }
+    // Empêcher le choix de la même langue 
+    if (nativeLanguage == learningLanguage) { 
+    System.out.println("You cannot choose the same language for both options."); 
+    return; 
+    }             
+    // Afficher le résumé correct            
+    System.out.println("Your native language is " + firstLanguage + " and you are learning " + learning + "."); 
+    System.out.println("Let's start !"); 
+    // la partie quiz, on va aussi comparer les reponces de l'utilisateur et les bonnes reponces 
+    int reponse =0; 
+    int incorrect =0; 
+    List<String>wrongAnswers=new ArrayList<>(); for(int i =0; i<fromlang.length; i++){ 
+    System.out.println("Translate" +" < " +fromlang[i] + " > " + " in " + learning ); 
+    String answer = scanner.nextLine().trim(); 
+    if(answer.equalsIgnoreCase(tolang[i])){ 
+    System.out.println("Correct!"); 
+    reponse++; 
+    }
+    else { 
+    System.out.println("Wrong! the correct answer is "+ tolang[i]); 
+    wrongAnswers.add(fromlang[i] +"->"+tolang[i]); incorrect++; } 
+    } 
+    // on affiche le score total et le nombre des mauvaises reponces ainsi que leur correction 
+    System.out.println("\nYour score:" + reponse + " / " + fromlang.length); 
+    System.out.print("\nIncorrect answers:" + incorrect + " / " + fromlang.length); 
+    if(reponse == fromlang.length){ 
+       System.out.println("\n that's awesome !"); 
+    } 
+    if(!wrongAnswers.isEmpty()){ 
+    System.out.println("\n Answers to the question you got wrong :"); 
+     for(String wrong : wrongAnswers){ 
+        System.out.println( wrong ); 
+     } 
+    } 
+    scanner.close(); 
+    return; 
+    } 
+    // ajouter une methode/ pourquoi faire/parce que je le peu! slay 
+    public static void Welcome(){ 
+       System.out.println("Welcome to my flashCard console practice"); 
+       System.out.println("Please give us the informations bellow before starting"); 
+    } 
+    // ajouter une methode pour le choix des langues 
+    public static int languageChoice(Scanner scanner, String message){ 
+      System.out.println(message); 
+      System.out.println(" [ 1 ] for English"); 
+      System.out.println(" [ 2 ] for French"); 
+      System.out.println(" [ 3 ] for Spanish"); 
+      return scanner.nextInt(); 
+    }
+    // elle va servir au test
+  public static boolean checkAnswer(String userAnswer, String correctAnswer) { 
+    return userAnswer.equalsIgnoreCase(correctAnswer); 
+  }
+ }
     
-}
+
