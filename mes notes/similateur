@@ -1,6 +1,8 @@
-mes notes
+                                                                            INTRODUCTION
+
  
-Sur le simulateur
+                                                                         1.Sur le simulateur
+
 ici on verra les composant d’un simulateur lab, le label 3D aa 4 principales areas
 -a la gauche ont le scenario windows(tres important ca rescrit les taches a effectuer pendant les activités du lab, on s’attendra que tuasses ces taches correctement , 
 besoin de plus d’espace, tu peux cacher le scenario windows
@@ -13,7 +15,7 @@ j’ai s0mmeil ukulélés ku mbuingilaje ferme ie seigneur il ya plein de therro
 selon ce que j’ai compris on simule un bureau et tu dois connecter a l’unité centrale l’écran le clavier et la souris, le plan de travail c’est la workspace et 
 on retrouve tout dans l’etagere
 
- 2. L’intérieur de l’ordinateur 
+                                                                    2. L’intérieur de l’ordinateur 
 
 - power supply: converted le courant du mur
 - CPU Fan: le cpu dentée la chaleur mais vu quechua produit la chaleur ca pourrait surchauffer il y un mécanisme de refroidissement 
@@ -23,6 +25,20 @@ on retrouve tout dans l’etagere
 SATA cable(bizarre non)
 - optical drives plus large que le disk dur et utilise un IDE cable pour se connecter a la carte mere
 - expansion card: est collé a la carte mere, on l’utilise pour 
- 3. Travailler avec network and server cabinets
 
- 
+                                                            3. Travailler avec network and server cabinets
+
+Je sais pas si ca va me servir mais bon
+Front view of the device(rack reseau -> c'est cadre mettalique qui contientdes composant reseau):
+A: Ethernet router (routeur connect deux ou + sous-reseaux,...)
+B: Ethernet switch (permet de connecter plusiseur appareil a un segment de reseau souvent avec des cables,...)
+C: Ethernet patch panel, centralise les connexions
+D: Fiber patch panel, centralise les connexions fibre optique
+E & F : Servers (Peu stocker les fichier, fournir l'adress ip,...)
+G & H : UPSs(system dalimentatuimmg,...)
+I: Wireless controller (contrpleur sans fil peut gerer et surveiller les pointd'acces sans fil dans une architecture reseaux sans fil,...)
+Back view pareil element mais differente view
+
+                                                          TECHNICIAN RESPONSIBILITIES
+
+                                                            1.Protection and Safety
