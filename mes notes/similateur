@@ -42,3 +42,25 @@ Back view pareil element mais differente view
                                                           TECHNICIAN RESPONSIBILITIES
 
                                                             1.Protection and Safety
+
+Technician responsibilities
+1.
+la chargeur vient du mur est store dans a power capacitor inter power supply unit
+les règles du haut voltage
+-avoid servicing
+-don’t wear ESD wrist straps
+les périphériques qui peuvent être un safety hazar:
+Laser printer safety: (avoid laser light,  toxic toner, hot fuser rollers, moving parts);
+Dot matrix printers:(avoid hot solenoids); DVD,CD(avoid laser lights); Fiber optic cables(avoid laser lights),….
+prevent un ESD(electro-static Discharge, la discharge peut affecter les composant de pc, il faut utiliser un static mat pour réguler les charges, c’est composé du surface conductive, connecter le static mat sur l’appareil, porteur bracelet static mat et le connecter aussi a l’appareil, débrancher l’appareil pour pas recevoir une charge électrique
+2.
+power surge: an increase in voltage lasting seconds
+power spike: increase  voltage lasting milliseconds
+power sag : decrease
+blackout:
+brownout
+protéger le system
+power concern
+ups
+-online
+-offline
