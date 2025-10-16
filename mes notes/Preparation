@@ -73,12 +73,9 @@ How can you tell the difference between an ST connector and an SC connector?
 In this section, you will learn to:
 
 Identify types of network cabling
-RG-6
-RG-6
-the work area
-planu cat 6a
-greatrt resistence
-crossoer cable
-patch
-greater cable
-imminuty
+
+VGA(souvent de couleur bleu) different de BD-9
+DVI(White video cable)
+DVI-A anolog only(5 pins droite 12 pins gauche)
+DVI-D digital only(1 pins droite 18pins gauche)or( 1 pins oneside 24pins otherside)
+DVI-I -integrated(both : analog digital) (5pins 18pins)&(5 pins 24 pins)
