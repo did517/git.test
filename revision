@@ -63,3 +63,542 @@ atx mid tower can be compatible with thw mini itx , moin d'espace et external ba
 micro atx towel 1 external bays
 micro atx slim towel compatible with micro atx towel it needs a reiser card to install expansion cards
 mini itx compatible to ,ini itx cards
+carte mère (s'abrite ou se connectea tout les composant )-> sockettype(CPU),memory module compatibility,est ce que j'en ai vraiment besoin,...
+24 pin power en dessous de la memoire
+I/O shield, motherboeard standoffs,power supply connector , CPU power connector , front panelconnectors, USB 
+header
+Dans ce laboratoire, votre tâche consiste à :
+pci pciex16
+pciex1 case fan power
+cpu power cpu
+memory power supply
+sata front/top panel
+usb iee1394
+batterie c,os
+connecteur interne
+emplacement cpi
+memoir flash
+connecteur es
+jeu de puce
+connect the power and accessory cables
+conneect your drives to the sata connectors
+install additional devices in the expansion slots
+connect the wires for the front/top panel port
+document the setting of the new motherboard
+
+the usb front panel connector was not properly connected
+
+shipset (ouce qui controle le bus cpi)
+Sélectionnez et installez la carte mère qui répond aux exigences du scénario.
+Connectez les câbles de boîtier d’ordinateur suivants :
+Interrupteur d'alimentation
+LED d'alimentation 3-1 broches
+Voyant du disque dur
+Conférencier
+Façade du ventilateur
+Ventilateur arrière
+USB (câble noir - 2.0)
+Panneau avant audio
+USB 3.0
+Connectez les connecteurs suivants à l’alimentation :
+Puissance du processeur
+Alimentation principale de la carte mère
+Connect the front fan power-->
+Connect the rear fan power-->
+Connect the front panel USB 3.1 to a USB 3 header****
+Connect the case power switch-->
+Connect the case power LED cable to the 3-1 pin area-->
+Connect the hard disk drive (HDD) LED cable-->
+Connect the case speaker cable-->
+Connect the front panel USB 2.0 to a USB header*****
+Connect the front panel audio to the audio connection-->
+
+
+
+Practice Questions
+(Attempt 2)
+Date: 10/22/2025, 10:38:26 AM
+Time Spent: 04:42
+Score: 100%
+Passing Score: 80%
+Individual Responses
+Objective Analysis
+
+Question 1
+Correct
+Illustration with five computer cases labeled A through E from left to right.
+Use the diagram above to match each case type label on the left with its corresponding case, identified by letters on the right.
+
+Keyboard Instructions
+A
+
+Mini-ITX tower
+
+Correct Answer:
+B
+
+Micro-ATX slim tower
+
+Correct Answer:
+C
+
+Micro-ATX tower
+
+Correct Answer:
+D
+
+ATX mid tower
+
+Correct Answer:
+E
+
+ATX full tower
+
+Correct Answer:
+Explanation
+Mini-ITX towers are designed to house Mini-ITX motherboards. Mini-ITX towers are typically smaller than Micro-ATX towers. The ITX form factor was designed for low-power, small, form factor (SFF) computers. The most common ITX form factor is the Mini-ITX form factor. Mini-ITX towers are often used with home theaters PC (HTPCs).
+
+Micro-ATX slim towers are typically half the width of a Micro-ATX tower and are designed to lay flat or upright.
+
+Micro-ATX towers are smaller cases that are designed to be placed on desktops. Micro-ATX towers typically only have one drive bay and are compatible with the Micro-ATX and Mini-ITX form factors.
+
+ATX mid-tower cases are slightly smaller than ATX full-tower cases. Mid-tower cases have fewer external and internal bays. ATX mid-tower cases are compatible with the Standard ATX, Micro-ATX, Mini-ITX, and some EATX form factors.
+
+ATX full-tower cases are the largest computer cases. Full-tower cases have a lot of space for external and internal components. ATX full-tower cases are compatible with the Standard ATX, Micro-ATX, and EATX form factors. The ATX (advanced technology extended) form factor is the most commonly used form factor. Because of its popularity, several variants of the ATX form factor exist. Each variant has different specifications for dimensions and number of expansion slots.
+
+However, all ATX variants share the following characteristics:
+
+Back plate measurements: 6.25" x 1.75"
+
+Power supply specifications: 24-pin ATX power connector, on/off switch runs from the case to the motherboard, and soft-power control (OS can turn the computer off)
+
+Expansion slot locations and spacing: 0.8" between slots
+
+Mounting hole locations
+
+CPU location (top of board near power supply)
+
+Related Content
+
+3.3.2 Cases and Form Factor Facts
+q_cases_match_cases_pp7.question.fex
+
+Question 2
+Correct
+You decided to upgrade your PC with a faster processor. To do this, you ordered a new motherboard over the internet that supports the processor that you want to use.
+
+When the motherboard arrives, you discover that the motherboard uses the Micro-ATX form factor. Your current case is an ATX mid-tower with a standard ATX motherboard inside.
+
+Which steps must you take for the Micro-ATX motherboard to work in the ATX case?
+
+answer
+
+No additional steps are necessary. You can install the Micro-ATX motherboard in the ATX case.
+
+Correct Answer:
+Correct
+
+Drill new holes in the Micro-ATX motherboard to match the mounting hole pattern in the ATX case.
+
+
+Drill new holes in the ATX case to match the mounting hole pattern in the Micro-ATX motherboard.
+
+
+Return the motherboard and replace it with an ATX form factor motherboard, as the Micro-ATX motherboard does not fit without modifying the case.
+
+Explanation
+ATX mid-tower cases support all ATX form factors, including Micro-ATX. The main difference between ATX and Micro-ATX is the number of bus and memory slots on the motherboard.
+
+You do not need to return the motherboard, and drilling holes in the motherboard or case can compromise or damage the integrity of both.
+
+Related Content
+
+3.3.2 Cases and Form Factor Facts
+q_cases_micro_atx_in_atx_pp7.question.fex
+
+Question 3
+Correct
+You work as the IT administrator for a small corporate network. One of the company employees needs to add an additional PCI card to the motherboard. When you open the computer, you see that the card that you purchased does not fit due to the card's height.
+
+Which of the following is the BEST method for using the newly purchased card?
+
+answer
+
+Use a parallel card to allow the new card to be installed parallel to the motherboard.
+
+
+Use an expanded case to accommodate the height of the newly purchased card.
+
+
+Use a riser card to allow the new card to be installed parallel to the motherboard.
+
+Correct Answer:
+Correct
+
+Use a FireWire card to allow the new card to be installed parallel to the motherboard.
+
+Explanation
+Riser cards attach to the motherboard and have expansion cards on the side. Using these expansion slots allow you to install additional cards parallel to the motherboard. This is especially useful in low-profile computers.
+
+Using a different case impacts the type of motherboard form factor that you can use. Using a different case does not resolve the issue.
+
+A parallel card adds additional parallel ports (for things like printers).
+
+A FireWire card gives the computer the ability to connect to a device using FireWire.
+
+Related Content
+
+3.3.2 Cases and Form Factor Facts
+q_cases_use_riser_card_pp7.question.fex
+
+Question 4
+Correct
+Illustration of computer motherboard. Comnector components labeled A through D across the top, L through J across the side, and I and H across the bottom.
+Consider the following diagram of a typical motherboard.
+
+Drag each label on the left to the letter on the right that best identifies the associated connector.
+
+Keyboard Instructions
+A
+
+PCI
+
+Correct Answer:
+B
+
+PCIe x16
+
+Correct Answer:
+C
+
+PCIe x1
+
+Correct Answer:
+D
+
+Case fan power
+
+Correct Answer:
+E
+
+CPU power
+
+Correct Answer:
+F
+
+CPU
+
+Correct Answer:
+G
+
+Memory
+
+Correct Answer:
+H
+
+Power supply
+
+Correct Answer:
+I
+
+SATA
+
+Correct Answer:
+J
+
+Front/top panel
+
+Correct Answer:
+K
+
+USB
+
+Correct Answer:
+L
+
+IEEE 1394
+
+Correct Answer:
+Explanation
+The connectors on the motherboard have the following functions:
+
+PCI slots: used to connect PCI expansion boards.
+
+PCIe slots: used to connect PCIe expansion boards.
+
+CPU fan power: used to provide DC power to the CPU fan.
+
+CPU power: provides additional DC power to the processor itself.
+
+CPU socket: provides an interface for connecting the CPU to the motherboard.
+
+Memory slots: provides an interface for connecting memory modules to the motherboard.
+
+Power supply connector: provides an interface for connecting the power supply (PSU) to the motherboard.
+
+SATA connectors: used to connect SATA storage devices.
+
+Front panel connectors: used to connect front panel buttons and lights to the motherboard.
+
+IEEE 1394: used to connect external FireWire devices.
+
+USB: used to connect external USB devices.
+
+Related Content
+
+3.3.3 Motherboard Components
+
+3.3.4 Motherboard Facts
+
+3.11.1 Expansion Buses and Slots
+
+3.11.2 Expansion Bus Types
+
+3.11.3 Install an Expansion Card
+q_mb_fact_associated_connector_pp7.question.fex
+
+Question 5
+Correct
+This question includes an image to help you answer the question.
+View Image
+Match each of the motherboard components on the left with the appropriate description on the right. Each component is used once.
+
+Keyboard Instructions
+Maintains an accurate system time and date, even when the power is off.
+
+CMOS battery
+
+Correct Answer:
+Allow components such as LED lights and fans to be plugged in.
+
+Internal connectors
+
+Correct Answer:
+Often called an expansion slots, they allow you to add cards to expand computer capabilities.
+
+PCI slots
+
+Correct Answer:
+Contains firmware that is used to configure motherboard settings and initialize devices.
+
+Flash memory
+
+Correct Answer:
+Include components such as USB ports, audio jacks, and an ethernet port.
+
+I/O connectors
+
+Correct Answer:
+Facilitates communication between the processor, memory, and peripheral devices.
+
+Chipset
+
+Correct Answer:
+Explanation
+A typical motherboard includes the following components:
+
+PCI slots, often called an expansion slots, allow you to add cards to expand computer capabilities.
+CMOS battery is used to maintain an accurate time and date, even when the motherboard has no power. Older systems used the CMOS battery to power the CMOS chip, which contained custom BIOS settings.
+Flash memory contains firmware that is used to configure motherboard settings and initialize devices.
+The chipset is a group of processing chips that facilitate communication between the processor, memory, and peripheral devices.
+I/O connectors include components such as USB ports, audio jacks, and an ethernet port.
+Internal connectors allow components such as LED lights and fans to be plugged in.
+Related Content
+
+3.3.4 Motherboard Facts
+
+3.9.4 CPU Socket Facts
+
+3.9.5 Install a Processor
+
+3.10.1 Processor Troubleshooting
+
+3.14.3 Identify Power Supply Components
+q_mb_fact_mthbrd_descrip_pp7.question.fex
+
+Question 6
+Correct
+Which of the following BEST describes the purpose of the north bridge chipset?
+
+answer
+
+The chip that controls the PCI bus.
+
+Correct Answer:
+Correct
+
+The chip that controls the system BIOS.
+
+
+The chip that controls all of the USB ports.
+
+
+The chip that controls the audio.
+
+Explanation
+The north bridge is the chip that connects a CPU to memory, the PCI bus, Level 2 cache, and AGP activities. The north bridge chip sits near the CPU and communicates with the CPU through the front-side bus (FSB).
+
+The other options are functions of the south bridge chipset.
+
+Related Content
+
+3.3.4 Motherboard Facts
+
+3.9.4 CPU Socket Facts
+
+3.9.5 Install a Processor
+
+3.10.1 Processor Troubleshooting
+
+3.14.3 Identify Power Supply Components
+q_mb_fact_northbridge_chipset_pp7.question.fex
+
+Question 7
+Correct
+Consider the connectors that are highlighted on the motherboard diagram.
+
+Select the CPU socket and the CPU power connector.
+
+
+Correct Answer: selectedCorrect Answer: selected
+Explanation
+CPU power (top-right connector): provides additional DC power to the processor itself.
+
+CPU socket (larger square connector, left of the CPU power connector): provides an interface for connecting the CPU to the motherboard.
+
+Related Content
+
+3.3.4 Motherboard Facts
+
+3.9.4 CPU Socket Facts
+
+3.9.5 Install a Processor
+
+3.10.1 Processor Troubleshooting
+
+3.14.3 Identify Power Supply Components
+q_mb_fact_select_cpu_components_pp7.question.fex
+
+Question 8
+Correct
+You are in the process of installing a motherboard in a system case.
+
+Which of the following objects should you place between the motherboard and the system case?
+
+answer
+
+Passive heat sink
+
+
+Heat spreaders
+
+
+Fans
+
+
+Standoffs
+
+Correct Answer:
+Correct
+
+Support manual
+
+Explanation
+Standoffs go between the motherboard and the case. Standoffs prevent the motherboard circuits from touching the system case and grounding or shorting.
+
+Heat spreaders go on memory modules to help cool them.
+
+Fans are installed in the system case, but not between the motherboard and the case.
+
+Passive heat sinks are installed with chipsets and low-performance processors.
+
+The support manual is a booklet that contains information about the motherboard.
+
+Related Content
+
+3.3.6 Motherboard Installation Facts
+q_mb_inst_standoffs_pp7.question.fex
+
+Question 9
+Correct
+You are in the process of installing a new motherboard in your workstation.
+
+You have already installed the CPU, heat sink, and memory. You have inserted the I/O shield into the case, fastened the standoffs to the case, and attached the motherboard to the standoffs. You are now ready to complete the installation.
+
+Drag each remaining step on the left to the right in the appropriate order that you need to complete them.
+
+Keyboard Instructions
+First
+
+Connect the power and accessory cables.
+
+Correct Answer:
+Second
+
+Connect your drives to the SATA connectors.
+
+Correct Answer:
+Third
+
+Install additional devices in the expansion slots.
+
+Correct Answer:
+Fourth
+
+Connect the wires for the front/top panel ports.
+
+Correct Answer:
+Last
+
+Document the settings of the new motherboard.
+
+Correct Answer:
+Explanation
+You should perform the steps in the following order to complete the motherboard installation:
+
+Connect the power and accessory cables.
+Connect your drives to the SATA connectors.
+Install additional devices in the expansion slots.
+Conned the wires for the front/top panel ports.
+Document the settings for the new motherboard.
+Related Content
+
+3.3.6 Motherboard Installation Facts
+q_mb_inst_step_order_pp7.question.fex
+
+Question 10
+Correct
+You have just finished replacing the motherboard in your friend Ethan's computer with the same type of motherboard that the computer had originally. You tested the motherboard by powering it on and by verifying that the operating system started and that the applications work.
+
+Now Ethan is complaining that his computer no longer recognizes his external hard drive, which he had connected to the previous motherboard.
+
+Which of the following is MOST likely causing the external hard drive not to function?
+
+answer
+
+The replacement motherboard does not support external hard drives.
+
+
+The hard drive has failed.
+
+
+The computer's power supply was not connected properly.
+
+
+The USB front panel connector was not properly connected.
+
+Correct Answer:
+Correct
+Explanation
+The most likely cause is that the USB cable is not connected or is not connected properly.
+
+If the motherboard is a replacement, and Ethan had the external hard drive connected previously, the new motherboard should also support the external hard drive.
+
+It is unlikely that the hard drive suddenly failed in such a short time.
+
+Since the operating system and applications are functioning properly, the power supply is functioning correctly as well.
+
+Related Content
+
+3.3.6 Motherboard Installation Facts
+q_mb_inst_trblsht_ext_hard_drive_pp7.question.fex
