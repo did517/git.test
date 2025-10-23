@@ -601,4 +601,37 @@ Since the operating system and applications are functioning properly, the power 
 Related Content
 
 3.3.6 Motherboard Installation Facts
-q_mb_inst_trblsht_ext_hard_drive_pp7.question.fex
+
+power issue behavior
+
+si le power supply ne fournit pas assez d'electricité
+unexpectedly shuts down, continuously reboots, won't power on at all, il faut verifier que le power supply est vraiment la cause, en le testant
+si il y a 11 volt sur 12-volt wire, indicates the power supply is failling, dans ce cas il faut le remplacer
+les messages d'erreurs, il faut voir dans le manuel ce que ca veut dire,: 201-> memory error, 301-> keybord error
+le post card fait en sorte de voir si tout fonctionne bien dans le pc,
+causes du surchauffement: inadequate airflow, improperly installed fans, failling fans, dust buildup
+si le system surchauffe, il y a un immediate shut down 
+que faire ne cas de fumée :eteindre immediatly
+cause: improperly seted connector
+short circuit
+malheuresement sion sent la fumée ca veut dire que c'est deja trop tard
+
+Turn the power supply switch to On.
+Above the computer, select Front to switch to the front view of the computer.
+On the computer, select the power button.
+Now that the proper power is being supplied, the computer boots to the operating system.
+Add a comment to the ticket and close the ticket.
+From the upper left, select Floor 1 Overview.
+Under IT Administration, select ITAdmin.
+In the New Comment field, enter a comment to indicate that the computer is now working.
+Select the + (plus sign) to add the comment.
+From the top of the ticket:
+Select Closed.
+Select the left arrow.
+There are no more tickets to be processed.
+Close Issue Trax.
+From the upper right, select Answer Questions.
+Select Score Lab.
+
+
+
