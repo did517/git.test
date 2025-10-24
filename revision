@@ -616,22 +616,18 @@ cause: improperly seted connector
 short circuit
 malheuresement sion sent la fumée ca veut dire que c'est deja trop tard
 
-Turn the power supply switch to On.
-Above the computer, select Front to switch to the front view of the computer.
-On the computer, select the power button.
-Now that the proper power is being supplied, the computer boots to the operating system.
-Add a comment to the ticket and close the ticket.
-From the upper left, select Floor 1 Overview.
-Under IT Administration, select ITAdmin.
-In the New Comment field, enter a comment to indicate that the computer is now working.
-Select the + (plus sign) to add the comment.
-From the top of the ticket:
-Select Closed.
-Select the left arrow.
-There are no more tickets to be processed.
-Close Issue Trax.
-From the upper right, select Answer Questions.
-Select Score Lab.
+DRAM TYPES
+
+if ram dyes, the computer won't work
+DDR RAM : double data rate ram  
+DRAM Dynamic random acces memory, 1 command per clock cycle, 64-bits of data -> word
+DIMM : used in desktop systems
+SO-DIMM: used in laptops(smaller memories we can use in a laptop)
+uniDIMM(universal dimm->upgrade of so-dimm): has DDR3 or DDR4 in the same slot
+
+control-panel, system&security->system
+command prompt->wmic basedboard get product, manifatcurer,version
+speccy: app for pc that show information of it, crucial website determines what kind of memory would duit your cp
 
 
 
