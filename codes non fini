@@ -1,43 +1,53 @@
-public class Rectangle {
-    private double width;
-    private double height;
-    public Rectangle( int width1,int height1) {
-    width1 =4;
-    height1 =40;
-    }
-    public Rectangle(double width2, double height2){
-        width2 =3.5;
-        height2 =35.9;
-    }
-    double getArea(){
-        return Math.PI * width * height;
-    }
-    double getPerimeter(){
-        return 2 * Math.PI * (width + height);
-    }
-    public void setWidth(double newWidth){
-        this.width=newWidth;
-    }
-    public void setHeight( double newHeight){
-        this.height=newHeight;
-    }
-}
+import java.util.Date;
 
-
-
-public class RectangleTest {
-    public static void main (String [] args){
-        double wight1=4;
-        double height1=40;
-        Rectangle r1 = new Rectangle(wight1,height1);
-        System.out.println("Rectangle 's area : " + r1.getArea());
-        System.out.println("Rectangle 's perimeter :" +r1.getPerimeter());
-        double width2 =3.5;
-        double height2=35.9;
-        Rectangle r2 = new Rectangle(width2,height2);
-        System.out.println("Rectangle's area : " + r2.getArea());
-        System.out.println("Rectangle's perimeter :" +r2.getPerimeter());
-
+public class Account {
+    private int id;
+    private double balance;
+    private double annualInterestRate;
+    private Date dateCreated;
+    // on fait comme si on travail!
+    public Account(int id, double balance, double annualInterestRate,Date dateCreated){
+        this.id=id;
+        this.balance=balance;
+        this.annualInterestRate=annualInterestRate;
     }
+    public Account(){
+        id =0;
+        balance =0;
+        annualInterestRate=0;
+    }
+    public int getId(){
+        return id;
+    }
+    public double getBalance(){
+        return balance;
+    }
+    public double getAnnualInterestRate(){
+        return annualInterestRate;
+    }
+    public void setId(int newId) {
+        this.id = newId;
+    }
+
+    public void setBalance(double newBalance) {
+        this.balance = newBalance;
+    }
+
+    public void setAnnualInterestRate(double newRate) {
+        this.annualInterestRate = newRate;
+    }
+    double getMonthlyInterestRate(){
+        return annualInterestRate/12;
+    }
+    double MonthlyInterest(){
+        return balance * (annualInterestRate/12);
+    }
+    double withdraw(){
+        return withdraw();
+    }
+    double deposit(){
+        return deposit();
+    }
+
     
 }
