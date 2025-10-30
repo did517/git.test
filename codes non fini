@@ -51,3 +51,28 @@ public class Account {
 
     
 }
+
+import java.util.Scanner;
+public class AccountTest {
+    public static void main(String[] args){
+        int id =1122;
+        double balance= 20000;
+        double annualInterestRate= 4.5;
+        Account a = new Account(id , balance , annualInterestRate);
+        System.out.println("Account Balance : " + a.getBalance());
+        System.out.println("Account Monthly interest :" + a.MonthlyInterest());
+        System.out.println("Account date created :" + a.getDateCreated());
+    }
+    public int id(){
+        Scanner scanner = new Scanner(System.in);
+        String [] idNumber = {"1","2","3","4","5","6","7","8","9"};
+        System.out.println("Enter your id number :");
+        System.out.println("Selecte your transaction");
+        System.out.println("1.Vieuw the current balance");
+        System.out.println("2.Withdraw money");
+        System.out.println("3.Deposit money");
+        System.out.println("4.Exit the menu");
+        return scanner.nextInt();
+    }
+    
+}
