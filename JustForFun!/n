@@ -1,0 +1,103 @@
+j'ai un flashcard console en java, j'aimerai le modifier et creer une interface pour mon prochain project, 
+welcom to my interface, have a great time passing test
+select your native language:
+(1 2 2) (tu n'auras qu'a cliquer)
+select your learning language:
+(1 2 3)
+your level
+beginner intermediare advenced
+if(beginner){
+you have 30 sec
+}
+else if(inertmediare){
+you have 20 sec
+}
+else(advenced){
+you have 10 sec
+}
+ what's the french  word for strange:
+etrange extrana
+et ainsi de suite
+your score is :
+click to see the correction 
+
+comment tu trouve l'edee
+Label scoreLabel = new Label("YOUR SCORE!");
+scoreLabel.setFont(Font.loadFont(
+    getClass().getResourceAsStream("/fonts/BubblegumSans-Regular.ttf"),
+    48
+));
+RotateTransition rt = new RotateTransition(Duration.seconds(1.5), scoreLabel);
+rt.setFromAngle(-10);   // penche à gauche
+rt.setToAngle(10);      // penche à droite
+rt.setAutoReverse(true);
+rt.setCycleCount(Animation.INDEFINITE);
+rt.play();
+
+c'est realisable avec java programming et javafx?
+
+import javafx.scene.media.AudioClip;
+
+// succès
+AudioClip successSound = new AudioClip(getClass().getResource("/sounds/success.mp3").toExternalForm());
+successSound.play();
+
+// échec
+AudioClip failSound = new AudioClip(getClass().getResource("/sounds/fail.mp3").toExternalForm());
+failSound.play();
+
+
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
+import javafx.scene.control.Label;
+
+Label timerLabel = new Label("10"); // 10 secondes
+int timeSeconds = 10;
+
+Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+    int currentTime = Integer.parseInt(timerLabel.getText());
+    if(currentTime > 0){
+        timerLabel.setText(String.valueOf(currentTime - 1));
+    } else {
+        // Temps écoulé → mauvaise réponse automatique
+        System.out.println("Time's up!");
+    }
+}));
+timeline.setCycleCount(timeSeconds);
+timeline.play();
+
+int timerSeconds;
+if (level.equals("beginner")) {
+    timerSeconds = 30;
+} else if (level.equals("intermediate")) {
+    timerSeconds = 20;
+} else { // advanced
+    timerSeconds = 10;
+}
+
+Button btnBeginner = new Button("Beginner");
+Button btnIntermediate = new Button("Intermediate");
+Button btnAdvanced = new Button("Advanced");
+
+btnBeginner.setOnAction(e -> startQuiz(30));
+btnIntermediate.setOnAction(e -> startQuiz(20));
+btnAdvanced.setOnAction(e -> startQuiz(10));
+
+// startQuiz(int seconds) : méthode qui lance la question avec timer
+public void startQuiz(int seconds){
+    timerLabel.setText(String.valueOf(seconds));
+    
+    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+        int currentTime = Integer.parseInt(timerLabel.getText());
+        if(currentTime > 0){
+            timerLabel.setText(String.valueOf(currentTime - 1));
+        } else {
+            System.out.println("Time's up!");
+            // son d’échec, passer à la question suivante
+        }
+    }));
+    timeline.setCycleCount(seconds);
+    timeline.play();
+}
+
