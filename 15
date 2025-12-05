@@ -65,3 +65,59 @@ public class ControlCircle extends Application {
     }
     
 }
+
+double leftBound = -getWidth()/2 + rectangle.getWidth()/2;
+double rightBound = getWidth()/2 - rectangle.getWidth()/2;
+double topBound = -getHeight()/2 + rectangle.getHeight()/2;
+double bottomBound = getHeight()/2 - rectangle.getHeight()/2;
+
+
+
+double leftBound = -getWidth()/2 + circle.getRadius();
+double rightBound = getWidth()/2 - circle.getRadius();
+double topBound = -getHeight()/2 + circle.getRadius();
+double bottomBound = getHeight()/2 - circle.getRadius();
+
+
+
+✅ 1) What graphical objects will you use to make this display?
+
+To make this display, I will use the following graphical objects:
+
+A Circle object (JavaFX Circle) to represent the movable shape.
+
+A StackPane to center the circle in the window.
+
+A BorderPane to organize the layout.
+
+Four Buttons ("Left", "Right", "Up", "Down") placed in an HBox to control the movement.
+
+✅ 2) What listeners will you use?
+
+I will use:
+
+ActionEvent listeners (setOnAction) on each button.
+These listeners detect when the user clicks a button and move the circle accordingly.
+
+Example:
+
+btLeft.setOnAction(e -> circlePane.Left());
+
+
+(You do NOT use key listeners unless you add keyboard control, so ActionEvent is the correct answer.)
+
+✅ 3) How will you check if the circle will stay on screen?
+
+Before moving the circle, I check whether its new position would still be inside the pane.
+
+The rule is:
+
+The circle must stay inside the pane, so its center ± radius must not cross the pane’s boundaries.
+
+I check this using:
+
+getWidth()   // width of the pane
+getHeight()  // height of the pane
+circle.getRadius()
+circle.getTranslateX()
+circle.getTranslateY()
