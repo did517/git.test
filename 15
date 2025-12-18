@@ -121,3 +121,32 @@ getHeight()  // height of the pane
 circle.getRadius()
 circle.getTranslateX()
 circle.getTranslateY()
+
+
+
+
+
+{
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home",
+            "default": true
+        }
+    ],
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/student/Documents/javafx-sdk-21.0.5/lib/javafx-swt.jar",
+        "/Users/student/Documents/javafx-sdk-21.0.5/lib/javafx.base.jar",
+        "/Users/student/Documents/javafx-sdk-21.0.5/lib/javafx.controls.jar",
+        "/Users/student/Documents/javafx-sdk-21.0.5/lib/javafx.fxml.jar",
+        "/Users/student/Documents/javafx-sdk-21.0.5/lib/javafx.graphics.jar",
+        "/Users/student/Documents/javafx-sdk-21.0.5/lib/javafx.media.jar",
+        "/Users/student/Documents/javafx-sdk-21.0.5/lib/javafx.swing.jar",
+        "/Users/student/Documents/javafx-sdk-21.0.5/lib/javafx.web.jar",
+         "/Users/student/Documents/javafx-sdk-21.0.5/lib/**/*.jar"
+    ]
+    
+}
