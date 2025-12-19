@@ -150,3 +150,84 @@ circle.getTranslateY()
     ]
     
 }
+
+
+
+
+
+
+1. Quels objets graphiques utiliser ?
+
+Un Text
+Pour afficher le message.
+
+Des Button
+Deux boutons pour déplacer le texte vers la gauche et vers la droite.
+
+Des RadioButton
+Pour choisir la couleur du texte.
+
+Un ToggleGroup
+Pour regrouper les RadioButton et garantir qu’une seule couleur est sélectionnée à la fois.
+
+Des conteneurs (HBox, BorderPane, ou Pane)
+Pour organiser l’interface :
+
+boutons en bas,
+
+radio buttons en haut,
+
+texte au centre.
+
+2. Quels listeners utiliser ?
+
+ActionEvent listeners
+
+Sur les Button pour déplacer le texte
+
+Sur les RadioButton pour changer la couleur
+
+Un seul type de listener suffit. Pas besoin de sur-ingénierie.
+
+3. Comment vérifier quel bouton est sélectionné ?
+
+Deux réponses possibles. Les deux sont valides, mais l’une est plus simple.
+
+Méthode simple (et recommandée)
+
+Chaque RadioButton a son propre setOnAction
+
+Quand il est cliqué, on sait automatiquement lequel est sélectionné
+
+Donc pas besoin de test compliqué.
+
+Méthode alternative
+
+Utiliser le ToggleGroup
+
+Appeler getSelectedToggle()
+
+Comparer avec les RadioButton
+
+Ça marche, mais c’est plus verbeux pour rien dans ce cas précis.
+
+4. Comment changer la couleur du texte ?
+
+Appeler la méthode :
+
+text.setFill(Color.RED);
+
+
+Selon le RadioButton sélectionné, on passe la couleur correspondante (RED, BLACK, GREEN, etc.).
+
+Le texte est déjà affiché, donc le changement est immédiat. Pas de recalcul, pas de rafraîchissement manuel.
+
+Résumé court et net (celui que le prof adore)
+
+Objets graphiques : Text, Button, RadioButton, ToggleGroup, conteneurs de layout
+
+Listeners : ActionEvent
+
+Sélection : gérée automatiquement par le ToggleGroup
+
+Couleur du texte : modifiée via setFill(Color)
