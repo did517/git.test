@@ -1,126 +1,26 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
 
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.geometry.Pos;
-import javafx.scene.layout.BorderPane;                                 
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
+public class Exercise17_01 {
 
-public class ControlCircle extends Application {
-    CirclePane circlePane = new CirclePane();
+    public static void main(String[] args) {
+        try (FileWriter writer = new FileWriter("Exercise17_01.txt", true)) {
+            Random random = new Random();
 
-    public void start(Stage primaryStage){
-        HBox hBox = new HBox();
-        hBox.setSpacing(10);
-        hBox.setAlignment(Pos.CENTER);
-        Button btLeft = new Button("Left");
-        Button btRight = new Button("Right");
-        Button btUp = new Button("Up");
-        Button btDown = new Button("Down");
-        hBox.getChildren().add(btLeft);
-        hBox.getChildren().add(btRight);
-        hBox.getChildren().add(btUp);
-        hBox.getChildren().add(btDown);
-        btRight.setOnAction(e -> circlePane.Right());
-        btLeft.setOnAction(e -> circlePane.Left());
-        btUp.setOnAction(e-> circlePane.Up());
-        btDown.setOnAction(e -> circlePane.Down());
-        BorderPane borderPane = new BorderPane();
-        borderPane.setCenter(circlePane);
-        borderPane.setBottom(hBox);
-        BorderPane.setAlignment(hBox,Pos.CENTER);
-        Scene scene = new Scene(borderPane, 200, 150);
-        primaryStage.setTitle("ControlCircle");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-    public static void main(String [] args){
-        launch(args);
-    }
-    
-    class CirclePane extends StackPane{
-        private Circle circle = new Circle(30);
-        public CirclePane(){
-            getChildren().add(circle);
-            circle.setStroke(Color.BLACK);
-            circle.setFill(Color.WHITESMOKE);
-        }
-        public void Left(){
-            circle.setTranslateX(circle.getTranslateX() -20);
-        }
-        public void Right(){
-            circle.setTranslateX(circle.getTranslateX() + 20 );
-        }
-        
-        public void Up(){
-            circle.setTranslateY(circle.getTranslateY() -20);
-        }
-        public void Down(){
-            circle.setTranslateY(circle.getTranslateY() +20);
+            for (int i = 0; i < 100; i++) {
+                int number = random.nextInt(100); // 0 à 99
+                writer.write(number + " ");
+            }
+
+            System.out.println("100 entiers ajoutés au fichier.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
-    
 }
 
-double leftBound = -getWidth()/2 + rectangle.getWidth()/2;
-double rightBound = getWidth()/2 - rectangle.getWidth()/2;
-double topBound = -getHeight()/2 + rectangle.getHeight()/2;
-double bottomBound = getHeight()/2 - rectangle.getHeight()/2;
-
-
-
-double leftBound = -getWidth()/2 + circle.getRadius();
-double rightBound = getWidth()/2 - circle.getRadius();
-double topBound = -getHeight()/2 + circle.getRadius();
-double bottomBound = getHeight()/2 - circle.getRadius();
-
-
-
-✅ 1) What graphical objects will you use to make this display?
-
-To make this display, I will use the following graphical objects:
-
-A Circle object (JavaFX Circle) to represent the movable shape.
-
-A StackPane to center the circle in the window.
-
-A BorderPane to organize the layout.
-
-Four Buttons ("Left", "Right", "Up", "Down") placed in an HBox to control the movement.
-
-✅ 2) What listeners will you use?
-
-I will use:
-
-ActionEvent listeners (setOnAction) on each button.
-These listeners detect when the user clicks a button and move the circle accordingly.
-
-Example:
-
-btLeft.setOnAction(e -> circlePane.Left());
-
-
-(You do NOT use key listeners unless you add keyboard control, so ActionEvent is the correct answer.)
-
-✅ 3) How will you check if the circle will stay on screen?
-
-Before moving the circle, I check whether its new position would still be inside the pane.
-
-The rule is:
-
-The circle must stay inside the pane, so its center ± radius must not cross the pane’s boundaries.
-
-I check this using:
-
-getWidth()   // width of the pane
-getHeight()  // height of the pane
-circle.getRadius()
-circle.getTranslateX()
-circle.getTranslateY()
 
 
 
@@ -152,82 +52,3 @@ circle.getTranslateY()
 }
 
 
-
-
-
-
-1. Quels objets graphiques utiliser ?
-
-Un Text
-Pour afficher le message.
-
-Des Button
-Deux boutons pour déplacer le texte vers la gauche et vers la droite.
-
-Des RadioButton
-Pour choisir la couleur du texte.
-
-Un ToggleGroup
-Pour regrouper les RadioButton et garantir qu’une seule couleur est sélectionnée à la fois.
-
-Des conteneurs (HBox, BorderPane, ou Pane)
-Pour organiser l’interface :
-
-boutons en bas,
-
-radio buttons en haut,
-
-texte au centre.
-
-2. Quels listeners utiliser ?
-
-ActionEvent listeners
-
-Sur les Button pour déplacer le texte
-
-Sur les RadioButton pour changer la couleur
-
-Un seul type de listener suffit. Pas besoin de sur-ingénierie.
-
-3. Comment vérifier quel bouton est sélectionné ?
-
-Deux réponses possibles. Les deux sont valides, mais l’une est plus simple.
-
-Méthode simple (et recommandée)
-
-Chaque RadioButton a son propre setOnAction
-
-Quand il est cliqué, on sait automatiquement lequel est sélectionné
-
-Donc pas besoin de test compliqué.
-
-Méthode alternative
-
-Utiliser le ToggleGroup
-
-Appeler getSelectedToggle()
-
-Comparer avec les RadioButton
-
-Ça marche, mais c’est plus verbeux pour rien dans ce cas précis.
-
-4. Comment changer la couleur du texte ?
-
-Appeler la méthode :
-
-text.setFill(Color.RED);
-
-
-Selon le RadioButton sélectionné, on passe la couleur correspondante (RED, BLACK, GREEN, etc.).
-
-Le texte est déjà affiché, donc le changement est immédiat. Pas de recalcul, pas de rafraîchissement manuel.
-
-Résumé court et net (celui que le prof adore)
-
-Objets graphiques : Text, Button, RadioButton, ToggleGroup, conteneurs de layout
-
-Listeners : ActionEvent
-
-Sélection : gérée automatiquement par le ToggleGroup
-
-Couleur du texte : modifiée via setFill(Color)
