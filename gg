@@ -1,0 +1,87 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+import javafx.animation.*;
+import javafx.util.Duration;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javax.sound.sampled.*;
+import java.io.File;
+import java.util.*;
+
+public class FlashCardFX extends Application {
+
+    private List<String> fromLang = Arrays.asList("Hello", "Thank you", "Water");
+    private List<String> toLang = Arrays.asList("Bonjour", "Merci", "Eau");
+    private int index = 0;
+    private int score = 0;
+
+    @Override
+    public void start(Stage stage) {
+        Label wordLabel = new Label(fromLang.get(index));
+        TextField answerField = new TextField();
+        Button submit = new Button("Submit");
+        Label feedback = new Label("Score: 0");
+
+        VBox root = new VBox(10, wordLabel, answerField, submit, feedback);
+        root.setStyle("-fx-padding: 20; -fx-alignment: center;");
+
+        submit.setOnAction(e -> {
+            String answer = answerField.getText().trim();
+            if (answer.equalsIgnoreCase(toLang.get(index))) {
+                playSound("correct.wav");
+                score++;
+                feedback.setText("Correct! Score: " + score);
+                launchConfetti(root);
+            } else {
+                playSound("wrong.wav");
+                feedback.setText("Wrong! Correct: " + toLang.get(index) + " | Score: " + score);
+            }
+
+            index++;
+            if (index < fromLang.size()) {
+                wordLabel.setText(fromLang.get(index));
+                answerField.clear();
+            } else {
+                wordLabel.setText("Done! Final score: " + score);
+                answerField.setDisable(true);
+                submit.setDisable(true);
+            }
+        });
+
+        stage.setScene(new Scene(root, 400, 300));
+        stage.setTitle("FlashCard App");
+        stage.show();
+    }
+
+    private void playSound(String fileName) {
+        try {
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File(fileName));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioIn);
+            clip.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void launchConfetti(Pane root) {
+        for (int i = 0; i < 20; i++) {
+            Circle c = new Circle(5, Color.color(Math.random(), Math.random(), Math.random()));
+            c.setTranslateX(Math.random() * root.getWidth());
+            c.setTranslateY(0);
+            root.getChildren().add(c);
+
+            TranslateTransition tt = new TranslateTransition(Duration.seconds(2 + Math.random()), c);
+            tt.setToY(root.getHeight());
+            tt.setOnFinished(ev -> root.getChildren().remove(c));
+            tt.play();
+        }
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+}
