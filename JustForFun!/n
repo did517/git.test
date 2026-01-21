@@ -294,3 +294,261 @@ public class ControlRectangle extends Application{
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** 
+ * * First project 
+ * * FlashCardApp.java 
+ * * A simple console-based flashcard application for practicing vocabulary 
+ * * between English, French, and Spanish. 
+ * * Author: Dimercia Kamwanga Numbi 
+ * * Date: October-1-2025 
+ * * Version: 1.0 */ 
+import java.util.ArrayList; 
+import java.util.List; 
+import java.util.Scanner;
+
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+   public class FlashCardApp extends Application { 
+    String [] English ={"Hello", "Thank you", "Water", "Sun", "House", "Bread", "Cloud", "Book", "Sea", "School"}; 
+    String [] French = {"Bonjour", "Merci", "Eau", "Soleil", "Maison", "Pain", "Nuage", "Livre", "Mer", "Ecole"}; 
+    String []Spanish = {"Hola", "Gracias", "Agua", "Sol", "Casa", "Pan", "Nube", "Libro", "Mar", "Escuela"}; 
+    String firstLanguage=""; 
+    String learning = ""; 
+    String [] fromlang= null; 
+    String [] tolang = null; 
+    private List<String> wrongAnswers = new ArrayList<>();
+
+   public void start(Stage primaryStage){ 
+
+    HBox hbox = new HBox();
+    VBox vBox = new VBox();
+    Label errorLabel = new Label();
+
+    Label message1 = new Label("What is your first Language");
+    Button btEnglish = new Button("English");
+    Button btFrench = new Button("French");
+    Button btSpanish =new Button("Spanish");
+    btEnglish.setOnAction(e-> { firstLanguage ="English";
+      fromlang =English;
+
+    });
+    btFrench.setOnAction(e-> { firstLanguage ="French";
+      fromlang =French;
+    });
+    btSpanish.setOnAction(e->{ firstLanguage ="Spanish";
+      fromlang =Spanish;
+    });
+    VBox FirstBox= new VBox(10,btEnglish,btFrench,btSpanish);
+
+    Label message2 = new Label("Select the language you are learning");
+    message2.setVisible(false);
+    Button btnEnglish = new Button("English");
+    Button btnFrench = new Button("French");
+    Button btnSpanish =new Button("Spanish");
+    btnEnglish.setOnAction(e->  {learning ="English";
+   tolang =English;
+   if(firstLanguage.equals(learning)) {
+    errorLabel.setText("You cannot choose the same language!");
+    return;
+  }
+   });
+    btnFrench.setOnAction(e->{ learning="French";
+      tolang =French;
+      if(firstLanguage.equals(learning)) {
+    errorLabel.setText("You cannot choose the same language!");
+    return;
+  }
+    });
+    btnSpanish.setOnAction(e->{ learning ="Spanish";
+      tolang =Spanish;
+      if(firstLanguage.equals(learning)) {
+    errorLabel.setText("You cannot choose the same language!");
+    return;
+      }
+    });
+    VBox SecondBox= new VBox(10,btnEnglish,btnFrench,btnSpanish);
+    SecondBox.setVisible(false);
+    Label questionLabel = new Label();
+    vBox.getChildren().addAll(message1, FirstBox, message2, SecondBox, errorLabel, questionLabel);
+    Scene scene = new Scene(vBox, 400, 400);
+    primaryStage.setScene(scene);
+    primaryStage.setTitle("FlashCard App");
+    primaryStage.show();
+   
+ }
+ public static void main(String[] args) {
+  launch(args);
+ }
+   }
+
+
+
+
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class FlashCardApp extends Application {
+
+    String firstLanguage = "";
+    String learningLanguage = "";
+      String [] English ={"Hello", "Thank you", "Water", "Sun", "House", "Bread", "Cloud", "Book", "Sea", "School"}; 
+    String [] French = {"Bonjour", "Merci", "Eau", "Soleil", "Maison", "Pain", "Nuage", "Livre", "Mer", "Ecole"}; 
+    String []Spanish = {"Hola", "Gracias", "Agua", "Sol", "Casa", "Pan", "Nube", "Libro", "Mar", "Escuela"}; 
+    String [] fromlang= null; 
+    String [] tolang = null; 
+    private List<String> wrongAnswers = new ArrayList<>();
+  
+    public void start(Stage primaryStage) {
+
+        // MESSAGE 1
+        Label message1 = new Label("Select your native language");
+
+        Button btEnglish = new Button("English");
+        Button btFrench = new Button("French");
+        Button btSpanish = new Button("Spanish");
+
+        // MESSAGE 2 (CACHÉ AU DÉBUT)
+        Label message2 = new Label("Select the language you are learning");
+        message2.setVisible(false);
+
+        Button btnEnglish = new Button("English");
+        Button btnFrench = new Button("French");
+        Button btnSpanish = new Button("Spanish");
+
+        // On cache aussi les boutons
+        btnEnglish.setVisible(false);
+        btnFrench.setVisible(false);
+        btnSpanish.setVisible(false);
+
+        // ACTIONS PREMIER CHOIX
+        btEnglish.setOnAction(e -> {
+            firstLanguage = "English";
+            showSecondStep(message2, btnEnglish, btnFrench, btnSpanish);
+        });
+
+        btFrench.setOnAction(e -> {
+            firstLanguage = "French";
+            showSecondStep(message2, btnEnglish, btnFrench, btnSpanish);
+        });
+
+        btSpanish.setOnAction(e -> {
+            firstLanguage = "Spanish";
+            showSecondStep(message2, btnEnglish, btnFrench, btnSpanish);
+        });
+
+        // ACTIONS SECOND CHOIX
+        btnEnglish.setOnAction(e -> learningLanguage = "English");
+        btnFrench.setOnAction(e -> learningLanguage = "French");
+        btnSpanish.setOnAction(e -> learningLanguage = "Spanish");
+
+        VBox root = new VBox(10,
+                message1,
+                btEnglish, btFrench, btSpanish,
+                message2,
+                btnEnglish, btnFrench, btnSpanish
+        );
+
+        Scene scene = new Scene(root, 400, 350);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("FlashCard App");
+        primaryStage.show();
+    }
+
+    // Méthode pour afficher la deuxième étape
+    private void showSecondStep(Label message2, Button... buttons) {
+        message2.setVisible(true);
+        for (Button b : buttons) {
+            b.setVisible(true);
+        }
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
