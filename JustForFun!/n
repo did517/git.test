@@ -540,7 +540,199 @@ public class FlashCardApp extends Application {
 
 
 
+import java.util.ArrayList;
+import java.util.List;
 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class FlashCardApp extends Application {
+
+    // ======================
+    // 1️⃣ DONNÉES
+    // ======================
+    private String firstLanguage = "";
+    private String learningLanguage = "";
+
+    String [] English ={"Hello", "Thank you", "Water", "Sun", "House", "Bread", "Cloud", "Book", "Sea", "School"}; 
+    String [] French = {"Bonjour", "Merci", "Eau", "Soleil", "Maison", "Pain", "Nuage", "Livre", "Mer", "Ecole"}; 
+    String []Spanish = {"Hola", "Gracias", "Agua", "Sol", "Casa", "Pan", "Nube", "Libro", "Mar", "Escuela"}; 
+
+    private String[] fromLang;
+    private String[] toLang;
+
+    private int currentIndex = 0;
+    private List<String> correctAnswer = new ArrayList<>();
+
+
+
+    // ======================
+    // 2️⃣ COMPOSANTS UI
+    // ======================
+    private Label questionLabel = new Label();
+    private Label feedbackLabel = new Label();
+    private TextField answerField = new TextField();
+    private Button submitButton = new Button("Submit");
+   
+
+    // ======================
+    // 3️⃣ START
+    // ======================
+    @Override
+    public void start(Stage stage) {
+
+        Label message1 = new Label("Select your native language");
+        Button btEnglish = new Button("English");
+        Button btFrench = new Button("French");
+        Button btSpanish = new Button("Spanish");
+
+        Label message2 = new Label("Select the language you are learning");
+        message2.setVisible(false);
+
+        Button btnEnglish = new Button("English");
+        Button btnFrench = new Button("French");
+        Button btnSpanish = new Button("Spanish");
+
+        btnEnglish.setVisible(false);
+        btnFrench.setVisible(false);
+        btnSpanish.setVisible(false);
+
+        // -------- Actions native language
+        btEnglish.setOnAction(e -> selectFirstLanguage("English", message2, btnEnglish, btnFrench, btnSpanish));
+        btFrench.setOnAction(e -> selectFirstLanguage("French", message2, btnEnglish, btnFrench, btnSpanish));
+        btSpanish.setOnAction(e -> selectFirstLanguage("Spanish", message2, btnEnglish, btnFrench, btnSpanish));
+
+        // -------- Actions learning language
+        btnEnglish.setOnAction(e -> startQuiz("English"));
+        btnFrench.setOnAction(e -> startQuiz("French"));
+        btnSpanish.setOnAction(e -> startQuiz("Spanish"));
+
+        // -------- Quiz UI (caché au début)
+        questionLabel.setVisible(false);
+        answerField.setVisible(false);
+        submitButton.setVisible(false);
+        feedbackLabel.setVisible(false);
+
+        VBox root = new VBox(10,
+                message1,
+                btEnglish, btFrench, btSpanish,
+                message2,
+                btnEnglish, btnFrench, btnSpanish,
+                questionLabel,
+                answerField,
+                submitButton,
+                feedbackLabel
+        );
+
+        stage.setScene(new Scene(root, 400, 400));
+        stage.setTitle("FlashCard App");
+        stage.show();
+    }
+
+    // ======================
+    // 4️⃣ MÉTHODES LOGIQUE
+    // ======================
+    private void selectFirstLanguage(String language, Label message2, Button... buttons) {
+        firstLanguage = language;
+        message2.setVisible(true);
+        for (Button b : buttons) b.setVisible(true);
+    }
+
+    private void startQuiz(String language) {
+        learningLanguage = language;
+
+        if (firstLanguage.equals(learningLanguage)) {
+            feedbackLabel.setText("You cannot choose the same language!");
+            feedbackLabel.setVisible(true);
+            return;
+        }
+
+        setLanguages();
+        showQuestion();
+    }
+
+    private void setLanguages() {
+        fromLang = switch (firstLanguage) {
+            case "French" -> French;
+            case "Spanish" -> Spanish;
+            default -> English;
+        };
+
+        toLang = switch (learningLanguage) {
+            case "French" -> French;
+            case "Spanish" -> Spanish;
+            default -> English;
+        };
+    }
+
+    private void showQuestion() {
+        questionLabel.setVisible(true);
+        answerField.setVisible(true);
+        submitButton.setVisible(true);
+        feedbackLabel.setVisible(true);
+
+        questionLabel.setText("Translate: " + fromLang[currentIndex]);
+
+        submitButton.setOnAction(e -> checkAnswer());
+    }
+
+    private void checkAnswer() {
+    String userAnswer = answerField.getText().trim();
+    String correct = toLang[currentIndex];
+
+    if (userAnswer.equalsIgnoreCase(correct)) {
+        correctAnswer.add(fromLang[currentIndex] + " → " + correct);
+        feedbackLabel.setText("Correct ✅");
+    } else {
+        wrongAnswers.add(fromLang[currentIndex] + " → " + correct);
+        feedbackLabel.setText("Wrong ❌ Correct: " + correct);
+    }
+
+    answerField.clear();
+    currentIndex++;
+
+    if (currentIndex < fromLang.length) {
+        questionLabel.setText("Translate: " + fromLang[currentIndex]);
+    } else {
+        showResults();
+    }
+}
+
+
+         private void showResults() {
+    questionLabel.setText("Quiz finished 🎉");
+    submitButton.setDisable(true);
+    answerField.setDisable(true);
+
+    StringBuilder result = new StringBuilder();
+    result.append("Correct answers: ").append(correctAnswer.size()).append("\n");
+    result.append("Wrong answers: ").append(wrongAnswer.size()).append("\n\n");
+
+
+    if (!wrongAnswers.isEmpty()) {
+        result.append("Corrections:\n");
+        for (String w : wrongAnswers) {
+            result.append(w).append("\n");
+        }
+    } else {
+        result.append("Perfect score 👏");
+    }
+
+    feedbackLabel.setText(result.toString());
+}
+
+
+
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
 
 
 
