@@ -56,9 +56,9 @@ public class FlashcardApp {
         //     System.out.println("Translate this word: " + fromLang[i]);
         //     String answer = scanner.next();
         //     if (answer.equalsIgnoreCase(toLang[i])) {
-        //         System.out.println("✅ Correct!");
+        //         System.out.println(" Correct!");
         //     } else {
-        //         System.out.println("❌ Wrong. Correct answer: " + toLang[i]);
+        //         System.out.println("Wrong. Correct answer: " + toLang[i]);
         //     }
         // }
 
